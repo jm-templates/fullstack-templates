@@ -1,1 +1,4 @@
 db-datas/postgres/**
+db-datas/oracle/**
+db-datas/mysql/**
+db-datas/mongo/**

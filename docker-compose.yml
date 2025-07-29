@@ -1,0 +1,63 @@
+services:
+
+  # spring boot
+  # backend:
+  #   image: backend-image
+  #   build:
+  #     context: ./backend
+  #   container_name: backend-container
+  #   environment:
+  #     - DATASOURCE_URL=jdbc:postgresql://db:5432/mydb
+  #     - DATASOURCE_USERNAME=postgres
+  #     - DATASOURCE_PASSWORD=postgres
+  #     - DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - 8080:8080
+  #   networks:
+  #     - mynet1
+
+  # react
+  # frontend:
+  #   image: frontend-image
+  #   build:
+  #     context: ./frontend
+  #   container_name: frontend-container
+  #   depends_on:
+  #     - backend
+  #   ports:
+  #     - 3000:3000
+  #   networks:
+  #     - mynet1
+  
+  # postgres
+  db:
+    image: postgres:17-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=mydb
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db-datas/postgres:/var/lib/postgresql/data
+    networks:
+      - mynet1
+    
+  # nginx
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx-container
+    ports:
+      - 80:80
+    depends_on:
+      # - backend
+      - db
+      # - frontend
+    networks:
+      - mynet1
+
+networks:
+  mynet1:

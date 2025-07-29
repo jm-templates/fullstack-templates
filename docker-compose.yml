@@ -33,45 +33,45 @@ services:
 
   # Oracle
   # db:
-  # image: gvenzl/oracle-xe:21-slim
-  # environment:
-  #   - ORACLE_PASSWORD=oracle
-  #   - ORACLE_DATABASE=mydb
-  # ports:
-  #   - 1521:1521
-  # volumes:
-  #   - ./db-datas/oracle:/opt/oracle/oradata
-  # networks:
-  #   - mynet1
+  #   image: gvenzl/oracle-xe:21-slim
+  #   environment:
+  #     - ORACLE_PASSWORD=oracle
+  #     - ORACLE_DATABASE=mydb
+  #   ports:
+  #     - 1521:1521
+  #   volumes:
+  #     - ./db-datas/oracle:/opt/oracle/oradata
+  #   networks:
+  #     - mynet1
 
   # MySQL
   # db:
-  # image: mysql:8.4
-  # environment:
-  #   - MYSQL_ROOT_PASSWORD=root
-  #   - MYSQL_DATABASE=mydb
-  #   - MYSQL_USER=myuser
-  #   - MYSQL_PASSWORD=mypassword
-  # ports:
-  #   - 3306:3306
-  # volumes:
-  #   - ./db-datas/mysql:/var/lib/mysql
-  # networks:
-  #   - mynet1
+  #   image: mysql:8.4
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=root
+  #     - MYSQL_DATABASE=mydb
+  #     - MYSQL_USER=myuser
+  #     - MYSQL_PASSWORD=mypassword
+  #   ports:
+  #     - 3306:3306
+  #   volumes:
+  #     - ./db-datas/mysql:/var/lib/mysql
+  #   networks:
+  #     - mynet1
 
   # MongoDB
   # db:
-  # image: mongo:7
-  # environment:
-  #   - MONGO_INITDB_ROOT_USERNAME=admin
-  #   - MONGO_INITDB_ROOT_PASSWORD=admin
-  #   - MONGO_INITDB_DATABASE=mydb
-  # ports:
-  #   - 27017:27017
-  # volumes:
-  #   - ./db-datas/mongo:/data/db
-  # networks:
-  #   - mynet1
+  #   image: mongo:7
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=admin
+  #     - MONGO_INITDB_ROOT_PASSWORD=admin
+  #     - MONGO_INITDB_DATABASE=mydb
+  #   ports:
+  #     - 27017:27017
+  #   volumes:
+  #     - ./db-datas/mongo:/data/db
+  #   networks:
+  #     - mynet1
 
   
   # postgres
